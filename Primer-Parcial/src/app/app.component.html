@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu type="reveal" content-id="main-content">
+<ion-menu type="reveal" content-id="main-content">
       <ion-header>
       <ion-toolbar color="danger">
           <ion-title>Contenido del menu</ion-title>
@@ -13,28 +13,34 @@
         </ion-content>
       
   </ion-menu>
-  <div class="ion-page" id="main-content">
-      <ion-header>
-          <ion-toolbar>
-              <ion-toolbar color="dark">
-                  <ion-buttons slot="start">
-                  <ion-menu-button></ion-menu-button>
-                  </ion-buttons>
-                  <ion-title>Mi carrito de compras</ion-title>
-              </ion-toolbar>
-          </ion-toolbar>
-      </ion-header>
-      
-      <ion-content color="light" class="ion-padding">
-      <!--<app-articulos></app-articulos>-->
-      <router-outlet></router-outlet>
+ 
+    
 
-      </ion-content>
+      <div class="ion-page" id="main-content">
+
+        <ion-header>
+            <ion-toolbar>
+                <ion-toolbar color="dark">
+                    <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title>Mi carrito de compras</ion-title>
+                </ion-toolbar>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content class="ion-padding">
+            <router-outlet></router-outlet>
+        </ion-content>
+     </div>
+            
+
+
       
-      <ion-footer>
+    <ion-footer>
       <ion-toolbar color="dark">
           <ion-title>Pie de pagina</ion-title>
       </ion-toolbar>
       </ion-footer>
-  </div>
+ 
 </ion-app>
