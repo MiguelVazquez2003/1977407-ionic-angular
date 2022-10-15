@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-articulos',
-  templateUrl: './articulos.component.html',
-  styleUrls: ['./articulos.component.css']
+  selector: 'app-articulo-detalle',
+  templateUrl: './articulo-detalle.component.html',
+  styleUrls: ['./articulo-detalle.component.css'],
 })
-export class ArticulosComponent implements OnInit {
+export class ArticuloDetalleComponent implements OnInit{
 
-  constructor() { }
+  constructor(private ruta:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.buscarArticulo();
   }
+
   articulos: any = [
     {
       id:1,
@@ -194,5 +197,17 @@ export class ArticulosComponent implements OnInit {
       ]
     }
   ];
+
+  idArticulo: string = this.ruta.snapshot.params['id'];
+  articuloDetalle: any = {};
+
+  buscarArticulo(){
+    for(let i = 0; i < this.articulos.length; i++){
+      if(this.idArticulo == this.articulos[i].id){
+        this.articuloDetalle = this.articulos[i];
+      }
+    }
+  
+  }
 }
 

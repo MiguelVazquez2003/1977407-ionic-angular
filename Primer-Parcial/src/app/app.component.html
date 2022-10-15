@@ -1,37 +1,40 @@
-
 <ion-app>
-<app-encabezado></app-encabezado>
-<ion-menu contentId="main-content">
-    <!-- Encabezado -->
-    <ion-header>
-      <ion-toolbar color="tertiary">
-        <ion-title>Carrito de compras</ion-title>
+  <ion-menu type="reveal" content-id="main-content">
+      <ion-header>
+      <ion-toolbar color="danger">
+          <ion-title>Contenido del menu</ion-title>
       </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">This is the menu content.
-        
-    </ion-content>
+      </ion-header>
+      <ion-content class="ion-padding">
+          <ion-item button>
+              <ion-icon slot="start" name="trophy"></ion-icon>
+              <ion-label>Hola</ion-label>
+          </ion-item>
+        </ion-content>
+      
   </ion-menu>
   <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Menu:0</ion-title>
+      <ion-header>
+          <ion-toolbar>
+              <ion-toolbar color="dark">
+                  <ion-buttons slot="start">
+                  <ion-menu-button></ion-menu-button>
+                  </ion-buttons>
+                  <ion-title>Mi carrito de compras</ion-title>
+              </ion-toolbar>
+          </ion-toolbar>
+      </ion-header>
+      
+      <ion-content color="light" class="ion-padding">
+      <!--<app-articulos></app-articulos>-->
+      <router-outlet></router-outlet>
+
+      </ion-content>
+      
+      <ion-footer>
+      <ion-toolbar color="dark">
+          <ion-title>Pie de pagina</ion-title>
       </ion-toolbar>
-    </ion-header>
-    
-    <ion-content class="ion-padding">
-      Tap the button in the toolbar to open the menu.
-    </ion-content>
+      </ion-footer>
   </div>
-<body>
-    <app-articulos></app-articulos>
-    <router-outlet></router-outlet>
-</body>
- 
-
-
-<app-footer></app-footer>
 </ion-app>
