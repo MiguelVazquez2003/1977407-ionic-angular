@@ -19,7 +19,7 @@ export class ArticuloDetalleComponent implements OnInit{
       id:1,
       nombre:"Audifonos de casco",
       precio: 200,
-      imagen: 'assets/imagenes/audifono1',
+      imagen: 'assets/imagenes/audifono1.jpg',
       reviews: [
         'Muy buenos audifonos. Me funcionaron perfectamente','El vendedor no me quiso realizar la devolucion, pesimo serivico'
       ]
