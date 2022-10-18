@@ -3,3 +3,15 @@ ion-img{
     margin: auto;
     display: block;
 }
+p {
+    font-weight: 700;
+    color: black;
+}
+p.review {
+    font-weight: 100;
+}
+
+ion-button {
+    display: block;
+    width: 100%;
+}

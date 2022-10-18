@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articulos.component.css']
 })
 export class ArticulosComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit(): void {
@@ -194,5 +194,9 @@ export class ArticulosComponent implements OnInit {
       ]
     }
   ];
+  carro:number=0;
+  agregarCarrito(){
+    this.carro++;
+  }
 }
 

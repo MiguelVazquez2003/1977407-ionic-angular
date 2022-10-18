@@ -8,6 +8,7 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { FooterComponent } from './footer/footer.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 
@@ -19,7 +20,8 @@ import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.co
     ArticulosComponent,
     FooterComponent,
     InicioComponent,
-    ArticuloDetalleComponent
+    ArticuloDetalleComponent,
+    CarritoComponent
     
   ],
   imports: [
