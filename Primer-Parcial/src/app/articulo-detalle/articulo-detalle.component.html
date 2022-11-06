@@ -8,16 +8,16 @@
         <ion-col size="12" size-md="5">
             <ion-card>
                 <ion-card-content>
-                    <p>{{articuloDetalle.nombre}}</p>
-                    <ion-img [src]="articuloDetalle.imagen"></ion-img>
+                    <p>{{(articulosFirebase|async)?.nombre}}</p>
+                    <ion-img [src]="(articulosFirebase|async)?.imagen"></ion-img>
                    
                 </ion-card-content>
                 
             </ion-card>
         </ion-col>
         <ion-col size="12" offset-md="1" size-md="2">
-            <h2>Comprar {{articuloDetalle.nombre}}</h2>
-            <p>${{articuloDetalle.precio}}</p>
+            <h2>Comprar {{(articulosFirebase|async)?.nombre}}</h2>
+            <p>${{(articulosFirebase|async)?.precio}}</p>
         </ion-col>
         <ion-col size="12" offset-md="1" size-md="2">
             <p>Entrega <strong>GRATIS</strong> hoy </p>
@@ -44,7 +44,7 @@
     <ion-row>
         <ion-col>
             <h2>Reviews</h2>
-            <p class="review" *ngFor="let review of articuloDetalle.reviews">
+            <p class="review" *ngFor="let review of (articulosFirebase|async)?.reviews">
                 {{review}}
             </p>
         </ion-col>
