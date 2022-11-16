@@ -178,7 +178,7 @@ async nuevaImagen(event:any){
     this.newFile=event.target.files[0];
     const reader=new FileReader();
     reader.onload=(image=>{
-    this.newImage=image.target?.result as string;
+    this.newArticulo.imagen=image.target?.result as string;
     });
     reader.readAsDataURL(event.target.files[0]);
     }

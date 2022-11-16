@@ -8,6 +8,11 @@
                 <ion-button (click)="limpiar=false">
                     <ion-icon slot="icon-only"  name="close"></ion-icon>
                 </ion-button>
+                
+                    <ion-button (click)="agregarArticulo()" class="btn-debug-success">
+                        <ion-icon slot="icon-only" name="save-sharp"></ion-icon>
+                        </ion-button>
+                
             </ion-buttons>
         </ion-item>
         <div class="normal">
@@ -61,20 +66,25 @@
         <input type="file" (change)="subirFoto($event)">
         
         <ion-progress-bar [value]="progress"></ion-progress-bar!-----> 
-            <ion-button (click)="agregarArticulo()" class="btn-debug-success">Guardar Articulo</ion-button>
-    </div>
-    <ion-item *ngFor="let articulo of articulos">
-        <ion-label>{{articulo.nombre}}</ion-label>
-        <ion-buttons slot="end">
-            <ion-button (click)="deleteArticulo(articulo)">
-                <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
-            </ion-button>
-            <ion-button (click)="newArticulo=articulo; limpiar=true">
-                <ion-icon slot="icon-only"  name="create-sharp"></ion-icon>
-            </ion-button>
-        </ion-buttons>
-    </ion-item>
+            
+        </div>
 
+        <ion-card>
+        
+        <h3>Lista de articulos</h3>
+        <ion-item *ngFor="let articulo of articulos">
+            <ion-label>{{articulo.nombre}}</ion-label>
+            <ion-buttons slot="end">
+                <ion-button (click)="deleteArticulo(articulo)">
+                    <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+                </ion-button>
+                <ion-button (click)="newArticulo=articulo; limpiar=true">
+                    <ion-icon slot="icon-only"  name="create-sharp"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+    
+        </ion-card>
 
 </ion-grid>
 
