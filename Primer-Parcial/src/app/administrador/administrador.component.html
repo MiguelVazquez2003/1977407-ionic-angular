@@ -1,0 +1,81 @@
+<ion-grid>
+   
+    <ion-button (click)="nuevo()" class="normal" color="dark">Nuevo articulo</ion-button>
+    <div *ngIf="limpiar" class="container">
+        <ion-item>
+            <ion-buttons slot="end">
+               
+                <ion-button (click)="limpiar=false">
+                    <ion-icon slot="icon-only"  name="close"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+        <div class="normal">
+                <ion-item>
+                    <ion-label color="dark">Nombre:
+                        
+                    </ion-label>
+                    <ion-input  [(ngModel)]="newArticulo.nombre" class="normal" type="text" inputmode="text"></ion-input>
+                </ion-item>
+               
+           
+        </div>
+        <div class="normal">
+                <ion-item><ion-label color="dark">Precio</ion-label>
+                    <input  [(ngModel)]="newArticulo.precio"  type="number" class="normal" inputmode="numeric"></ion-item>
+                
+           
+        </div>
+        <div class="normal">
+            <ion-item>
+                <ion-label color="dark">Categoria:
+                    
+                </ion-label>
+                <ion-input  [(ngModel)]="newArticulo.categoria" class="normal" type="text" inputmode="text"></ion-input>
+            </ion-item>
+
+            <div class="normal">
+                <ion-item>
+                    <ion-label  color="dark">Foto: </ion-label>
+                        <ion-buttons>
+                            <ion-button slot="end">
+                                <label for="file-upload">
+                                    <ion-icon slot="icon-only" name="images"></ion-icon>
+                                </label>
+                               
+                                <input (change)="nuevaImagen($event)" id="file-upload" style="display:none" type="file" accept="image/*">
+                            </ion-button>
+                        </ion-buttons>
+                   
+                 
+                </ion-item>
+                <ion-item>
+                    <img [src]="newArticulo.imagen">
+                </ion-item>
+                </div>
+    
+    </div>
+        
+     
+        <!------h3>Subir foto del articulo</h3>
+        <input type="file" (change)="subirFoto($event)">
+        
+        <ion-progress-bar [value]="progress"></ion-progress-bar!-----> 
+            <ion-button (click)="agregarArticulo()" class="btn-debug-success">Guardar Articulo</ion-button>
+    </div>
+    <ion-item *ngFor="let articulo of articulos">
+        <ion-label>{{articulo.nombre}}</ion-label>
+        <ion-buttons slot="end">
+            <ion-button (click)="deleteArticulo(articulo)">
+                <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+            </ion-button>
+            <ion-button (click)="newArticulo=articulo; limpiar=true">
+                <ion-icon slot="icon-only"  name="create-sharp"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-item>
+
+
+</ion-grid>
+
+        
