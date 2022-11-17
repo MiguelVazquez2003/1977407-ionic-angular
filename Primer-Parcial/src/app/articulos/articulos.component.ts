@@ -3,25 +3,19 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { Observable } from 'rxjs';
 import { ServicioCarritoService } from '../servicio-carrito.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-export interface Articulo{
-  id: number;
-  nombre: string;
-  precio: number;
-  imagen: string;
-  reviews: string[]; 
-}
+import { Articulos} from 'src/app/models/articulo.model';
 @Component({
   selector: 'app-articulos',
   templateUrl: './articulos.component.html',
   styleUrls: ['./articulos.component.css']
 })
 export class ArticulosComponent implements OnInit {
-  private coleccionFirebase: AngularFirestoreCollection<Articulo>;
-  articulosFirebase: Observable<Articulo[]>;
+  private coleccionFirebase: AngularFirestoreCollection<Articulos>;
+  articulosFirebase: Observable<Articulos[]>;
   articuloDoc: any;
 
  constructor(private carritoService: ServicioCarritoService, private aFirestore:AngularFirestore,  private aFireStorage: AngularFireStorage) {
-   this.coleccionFirebase = this.aFirestore.collection<Articulo>('articulos');
+   this.coleccionFirebase = this.aFirestore.collection<Articulos>('articulos');
    this.articulosFirebase = this.coleccionFirebase.valueChanges({idField: 'id'});
    const ref = this.aFireStorage.storage;
  }

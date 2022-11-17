@@ -16,7 +16,9 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
-
+import { AdministradorComponent } from './administrador/administrador.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { environment } from '../environments/environment';
     FooterComponent,
     InicioComponent,
     ArticuloDetalleComponent,
-    CarritoComponent
+    CarritoComponent,
+    AdministradorComponent,
+    MenuComponent
     
   ],
   imports: [
@@ -39,6 +43,7 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    FormsModule
   ],
   
   providers: [],

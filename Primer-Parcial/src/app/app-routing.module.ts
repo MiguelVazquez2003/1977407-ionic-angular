@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { InicioComponent } from './inicio/inicio.component';
-
+import { AdministradorComponent } from './administrador/administrador.component';
 const rutas: Routes = [
     {
         path: 'articulos', 
@@ -12,6 +12,10 @@ const rutas: Routes = [
     {
         path: 'inicio', 
         component: InicioComponent
+    },
+    {
+    path:'administrador',
+    component:AdministradorComponent
     },
     {
         path: 'detalle/:id',

@@ -4,14 +4,10 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
 import { Observable } from 'rxjs';
 import { ServicioCarritoService } from '../servicio-carrito.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Articulos } from '../models/articulo.model';
 
-export interface articuloDetalle{
-  id: number;
-  nombre: string;
-  precio: number;
-  imagen: string;
-  reviews: string[]; 
-}
+
+
 
 @Component({
   selector: 'app-articulo-detalle',
@@ -20,12 +16,12 @@ export interface articuloDetalle{
 })
 export class ArticuloDetalleComponent implements OnInit{
   meta:Observable<any>
-  private documentoFirebase: AngularFirestoreDocument<articuloDetalle>
-  articulosFirebase: Observable<articuloDetalle|undefined>;
+  private documentoFirebase: AngularFirestoreDocument<Articulos>
+  articulosFirebase: Observable<Articulos|undefined>;
 
   idArticulo: string=this.ruta.snapshot.params['id'];
   constructor(private ruta:ActivatedRoute,private carritoService: ServicioCarritoService,private aFirestore:AngularFirestore, private storage : AngularFireStorage) { 
-    this.documentoFirebase=aFirestore.doc<articuloDetalle>('articulos/'+this.idArticulo);
+    this.documentoFirebase=aFirestore.doc<Articulos>('articulos/'+this.idArticulo);
     this.articulosFirebase=this.documentoFirebase.valueChanges({idField:'id'});
     const ref = this.storage.ref('articulos');
     this.meta = ref.getMetadata();
