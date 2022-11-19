@@ -1,16 +1,23 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit ,Input,ViewChild,ElementRef} from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Observable } from 'rxjs';
 import { NgModel } from '@angular/forms';
 import { resolve } from 'dns';
 import { FirestoreService } from '../services/firestore.service';
-import { AlertController, LoadingController, NumericValueAccessor, ToastController } from '@ionic/angular';
+import { ActionSheetController, AlertController, LoadingController, NumericValueAccessor, ToastController } from '@ionic/angular';
 import { Articulos} from '../models/articulo.model';
 import { getDiffieHellman } from 'crypto';
 import { read } from 'fs';
 import { FirestorageService } from '../services/firestorage.service';
 import { ThisReceiver } from '@angular/compiler';
+import { Capacitor } from '@capacitor/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Platform } from '@ionic/angular';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { type } from 'os';
+import { UserPhoto } from '../models/user-photo.model';
+
 
 @Component({
   selector: 'app-administrador',
@@ -18,6 +25,7 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./administrador.component.css']
 })
 export class AdministradorComponent implements OnInit {
+ 
   newFile='';
   loading:any;
   limpiar=false;
@@ -46,15 +54,18 @@ articulos:Articulos[]=[];
 
 constructor(private aFirestore:AngularFirestore, private aFireStorage: AngularFireStorage,
   private servicio:FirestoreService,public loadingcontroller:LoadingController,
-  public ToastController: ToastController,public alertController:AlertController,public firestorage:FirestorageService)
+  public ToastController: ToastController,public alertController:AlertController,public firestorage:FirestorageService,
+  public actionSheetController: ActionSheetController,
+  )
   {
   this.coleccionFirebase = this.aFirestore.collection<Articulos>('articulos');
    this.articulosFirebase = this.coleccionFirebase.valueChanges({idField: 'id'});
    const ref = this.aFireStorage.storage;
 
 }
-  ngOnInit(): void {
+  async ngOnInit(){
     this.getProductos();
+
   }
   progress : number | undefined;
   subirFoto(event: any){
@@ -182,7 +193,13 @@ async nuevaImagen(event:any){
     reader.readAsDataURL(event.target.files[0]);
     }
 
+  
+
 
 
 }
+
+
+
+
 }
