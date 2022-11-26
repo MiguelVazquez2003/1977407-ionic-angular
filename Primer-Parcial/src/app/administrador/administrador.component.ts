@@ -192,11 +192,6 @@ async nuevaImagen(event:any){
     });
     reader.readAsDataURL(event.target.files[0]);
     }
-
-  
-
-
-
 }
 
 

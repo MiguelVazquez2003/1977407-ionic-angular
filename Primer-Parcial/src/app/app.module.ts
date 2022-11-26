@@ -6,7 +6,6 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { IonicModule } from '@ionic/angular';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { FooterComponent } from './footer/footer.component';
-import { InicioComponent } from './inicio/inicio.component';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { CarritoComponent } from './carrito/carrito.component';
 
@@ -27,7 +26,6 @@ import { FormsModule } from '@angular/forms';
     EncabezadoComponent,
     ArticulosComponent,
     FooterComponent,
-    InicioComponent,
     ArticuloDetalleComponent,
     CarritoComponent,
     AdministradorComponent,

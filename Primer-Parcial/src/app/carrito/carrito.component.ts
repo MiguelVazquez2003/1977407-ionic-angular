@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { ServicioCarritoService } from '../services/servicio-carrito.service';
 
 @Component({
   selector: 'app-carrito',
@@ -7,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  carrito$:Observable<number>;
+  constructor(private carroService:ServicioCarritoService) {
+    this.carrito$ = carroService.sujeto$;
+  }
 
   ngOnInit(): void {
   }
-  @Input() carrito: number = 0;
+
 }

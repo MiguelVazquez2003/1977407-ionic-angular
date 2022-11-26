@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { ArticulosComponent } from './articulos/articulos.component';
-import { InicioComponent } from './inicio/inicio.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { CarritoComponent } from './carrito/carrito.component';
 const rutas: Routes = [
     {
-        path: 'articulos', 
-        component: ArticulosComponent
+    path:'carrito',
+    component:CarritoComponent
     },
     {
-        path: 'inicio', 
-        component: InicioComponent
+        path:'articulos/:categoria', 
+        component: ArticulosComponent
     },
     {
     path:'administrador',
@@ -23,7 +23,7 @@ const rutas: Routes = [
     },
     {
         path: '',
-        redirectTo: '/articulos', 
+        redirectTo: '/administrador', 
         pathMatch: 'full'
     }
 ];

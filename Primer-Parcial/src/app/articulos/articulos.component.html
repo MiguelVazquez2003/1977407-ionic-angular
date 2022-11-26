@@ -2,7 +2,7 @@
   <ion-row>
       <ion-col>
           
-         <app-carrito [carrito]="carro">  </app-carrito>
+         
        
 
       
@@ -10,10 +10,22 @@
   </ion-row>
   <ion-row>
       
-      <ion-col size="12" size-md="3" *ngFor="let articulo of articulosFirebase| async">
+    <ng-container *ngFor="let articulo of articulosFirebase | async">
+        <ion-col size="12" size-md="3" *ngIf="articulo.categoria == categoria">
           <ion-card>
-              <ion-card-header>
+              <ion-card-header class="header">
+                
                   <p>{{articulo.nombre}}</p>
+                  
+                       
+                       
+                         
+                      
+                 
+
+                  
+                  
+                  
               </ion-card-header>
               <ion-card-content>
                   
@@ -21,12 +33,33 @@
                       <img [src]="articulo.imagen" alt="{{articulo.nombre}}">
                   </a>
                   <p class="precio">${{articulo.precio}}</p>
-                  <ion-button (click)="agregarCarrito()">Agregar al Carrito</ion-button>
+                  
+                  <!---ion-button (click)="agregarCarrito()">Agregar al Carrito</ion-button!_-->
+                  <ion-button (click)="agregarCarrito()">Agregar</ion-button>
+                  
+                   
+                     
+                   
+                   
+                        
+                            <!--ion-icon name="cart-sharp"></ion-icon!-->
+                            
+                         
+                        <!---ion-button (click)="decrease.emit()">
+                            
+                            <ion-icon slot="icon-only" name="remove"></ion-icon>
+                          </ion-button--->
+                  
+                   
+                       
+                      
+                   
+                  
               </ion-card-content>
-          
+             
           </ion-card>
       </ion-col>
-     
+     </ng-container>
   </ion-row>
  
 </ion-grid>

@@ -1,0 +1,17 @@
+.cart{
+    color: white;
+    font-size: 30px;
+   padding:20px;
+   background:blue
+    
+}
+.header{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color:black;
+}
+
+.hola{
+    right:0px;
+    position: absolute;
+}
