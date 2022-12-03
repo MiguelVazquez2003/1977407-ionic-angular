@@ -1,0 +1,5 @@
+ion-content {
+    background-image: url("../assets/imagenes/logo.jpg");
+    background-size: cover;
+    background-position: center;
+  }
