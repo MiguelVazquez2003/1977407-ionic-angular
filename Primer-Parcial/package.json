@@ -14,7 +14,7 @@
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
     "@angular/core": "~13.2.0",
-    "@angular/fire": "^7.4.1",
+    "@angular/fire": "^7.6.1",
     "@angular/forms": "~13.2.0",
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
@@ -27,7 +27,8 @@
     "@ionic/pwa-elements": "^3.1.1",
     "bootstrap": "^5.2.2",
     "cordova": "^11.0.0",
-    "firebase": "^9.13.0",
+    "firebase": "^9.22.2",
+    "lottie-web": "^5.12.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

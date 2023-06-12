@@ -1,14 +1,15 @@
-<form #formEditar="ngForm">
+<form #formEditar="ngForm" class="editar-form">
+    <div class="lottie-container" id="lottieContainer"></div>
+  
     <ion-item>
-        <label>Nombre de usuario</label>
-        <input type="text" name="cajanombre" #cajanombre placeholder="Spiderman" class="form-control">
+      <label class="editar-label">Nombre de usuario</label>
+      <input type="text" name="cajanombre" #cajanombre placeholder="Spiderman" class="editar-input">
     </ion-item>
-    
-   
-    
-      
-    <ion-button color="dark" class="btn btn-success" (click)="modificar()">
-        Modificar usuario
+    <ion-item>
+      <input type="file" (change)="onFileSelected($event)" class="editar-file-input">
+    </ion-item>
+    <ion-button color="dark" class="editar-button" (click)="modificar()">
+      Modificar usuario
     </ion-button>
-</form>
-
+  </form>
+  

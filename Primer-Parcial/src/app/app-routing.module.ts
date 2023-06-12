@@ -22,7 +22,7 @@ const rutas: Routes = [
         component:HomeComponent
     },
     {
-        path:'',
+        path:'login',
         component:LogInComponent
     },
     {
@@ -60,7 +60,7 @@ const rutas: Routes = [
     
     {
         path: '',
-        redirectTo: '/home', 
+        redirectTo: '/login', 
         pathMatch: 'full'
     }
 ];

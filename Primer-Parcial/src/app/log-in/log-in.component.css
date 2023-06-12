@@ -1,9 +1,53 @@
 .contenedor {
-    height: 100vh;
-    width: 100%;
-      background-image: url("/assets/imagenes/5cf1de50-3202-41e1-a519-8be093548ebb.svg");
-  
-      background-position: 30%;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: gray;
+}
+
+.lottie-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+}
+
+form {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+input,
+ion-label {
+  color: rgb(63, 63, 63);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 5px 0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+ion-button {
+  margin-bottom: 10px;
+  --color: white;
+  --background: blue;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}

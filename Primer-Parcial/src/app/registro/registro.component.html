@@ -1,19 +1,18 @@
-<form #formRegistro="ngForm">
-    <div class="contenedor ">
-        <ion-item>
-            <label>Email</label>
-        <input type="email" name="cajamail" #cajamail placeholder="example@example.com" class="form-control">
-        </ion-item>
-        
-        <ion-item>
-            <label>Contraseña</label>
-            <input type="password" name="cajapassword" #cajapassword placeholder="123456" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
-        </ion-item>
-       
-        
-        <ion-button slot="center"  class="btn btn-success" color="dark" (click)="registro()">
-            Registrar
-        </ion-button>
-    </div>
-   
-</form>
+<div class="contenedor">
+    <form #formRegistro="ngForm">
+      <ion-item>
+        <label>Email: </label>
+        <input type="email" name="cajamail" #cajamail placeholder="Email" class="form-control">
+      </ion-item>
+  
+      <ion-item>
+        <label>Contraseña: </label>
+        <input type="password" name="cajapassword" #cajapassword placeholder="****" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
+      </ion-item>
+  
+      <ion-button slot="center" class="btn btn-success" color="dark" (click)="registro()">
+        Registrar
+      </ion-button>
+    </form>
+  </div>
+  

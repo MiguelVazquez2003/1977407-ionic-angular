@@ -1,44 +1,35 @@
-<div class="contenedor">
-  <div *ngIf="logueado; else cargando">
-    <div>
-      <ion-card mode="ios" color="">
-          <ion-item>
-            
-          <img src="assets/imagenes/perfil.png"  width="200px" height="200px">
+<body>
+  <div class="lottie-container" id="lottieContainer"></div>
+
+  <div class="contenedor">
+    <div *ngIf="logueado; else cargando">
+      <div class="card-container">
+        <ion-card mode="ios" color="">
           <ion-card-title>
-            Usuario con sesion
+            Usuario con sesión
           </ion-card-title>
-        </ion-item>
+          <ion-item>
+            <img [src]="imgUrl || 'assets/imagenes/perfil.json'" class="imagen-perfil">
+          </ion-item>
           <div>
-        
-        
-      
-      
-        <ion-card-content>
-      
-          
-         <p>EMAIL:{{usuario.email}}</p> 
-          <p>USUARIO : {{usuario.displayName}}</p>
-        </ion-card-content>
-      
+            <ion-card-content>
+              <p>EMAIL: {{usuario.email}}</p> 
+              <p>USUARIO: {{usuario.displayName}}</p>
+            </ion-card-content>
+          </div>
+        </ion-card>
+        <ion-button href="/editar">Editar datos del usuario</ion-button>
       </div>
-    </ion-card>
-    
-      <ion-button href="/editar">Editar datos del usuario</ion-button>
-    
     </div>
   </div>
-  <!---ion-card>
-    
-    <ion-card-content>
-      <img src="/assets/imagenes/perfil.png" class="card-img-top img-fluid" width="200px" height="200px">
-    </ion-card-content>
-  </ion-card!--->
-  
-  <ng-template #cargando>
-      <div class="container">
-          <img src="../../assets/imagenes/perfil.png" style="max-width: 400px; max-height: 600px;">
-      </div>
-  </ng-template>
-</div>
 
+  <ng-template #cargando>
+    <div class="container">
+      <!-- Resto del código HTML del componente -->
+      <div class="imagen-perfil">
+        <img [src]="imgUrl" alt="Foto de perfil">
+      </div>
+      <!-- Resto del código HTML del componente -->
+    </div>
+  </ng-template>
+</body>

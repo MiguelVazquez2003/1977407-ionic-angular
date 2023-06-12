@@ -1,9 +1,39 @@
 .contenedor {
-    height: 100vh;
-    width: 100%;
-      background-image: url("/assets/imagenes/registro.png");
-  
-      background-position: 30%;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+  height: 100vh;
+  width: 100%;
+  background-image: url("/assets/imagenes/fondo1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+ion-item {
+  margin-bottom: 15px;
+}
+
+ion-label {
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+ion-button {
+  width: 100%;
+  margin-top: 20px;
+}

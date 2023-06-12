@@ -37,10 +37,7 @@ export class ArticulosComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  agregarCarrito(){
-    this.carritoService.agregarItem(1);
-    console.log("se agrego al carrito")
-  }
+
   
 
   

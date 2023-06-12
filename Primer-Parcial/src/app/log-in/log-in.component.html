@@ -1,31 +1,34 @@
-<form #formLogIn="ngForm">
-    <ion-grid>
-        <div class="contenedor">
-            <div>
-                <ion-item>
-                <ion-label>Email</ion-label>
+<div class="contenedor">
+    <div class="lottie-container" id="lottieContainer"></div>
+  
+    <form #formLogIn="ngForm">
+      <ion-grid>
+        <div>
+          <ion-item>
+            <ion-label>Email</ion-label>
             <input type="email" name="cajamail" #cajamail placeholder="example@example.com" class="form-control">
-        </ion-item>
-            </div>
-            <div>
-                <ion-item>
-    <ion-label>Contraseña</ion-label>
-        <input type="password" name="cajapassword" #cajapassword placeholder="123456" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
-                </ion-item>
-            </div>
-            
-        
-        
-       
-        <ion-button color="light" mode="ios" class="btn btn-success" (click)="logIn()">
-            Log In
-        </ion-button>
-       
-        <ion-button slot="end" color="light" mode="ios" class="btn btn-danger" (click)="logInGoogle()">
-            Log In con Google
-        </ion-button>
+          </ion-item>
         </div>
-    </ion-grid>
-   
-       
-</form>
+        <div>
+          <ion-item>
+            <ion-label>Contraseña</ion-label>
+            <input type="password" name="cajapassword" #cajapassword placeholder="123456" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
+          </ion-item>
+        </div>
+  
+        <div class="button-container">
+          <ion-button expand="block" color="success" (click)="logIn()">
+            Log In
+          </ion-button>
+  
+          <ion-button expand="block" color="danger" (click)="logInGoogle()">
+            Log In con Google
+          </ion-button>
+          <ion-button expand="block" color="dark" (click)="registro()">
+            Registrate
+          </ion-button>
+        </div>
+      </ion-grid>
+    </form>
+  </div>
+  
