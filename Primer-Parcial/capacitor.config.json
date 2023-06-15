@@ -1,0 +1,8 @@
+{
+  "appId": "tienda.com.app",
+  "appName": "primer-parcial",
+  "webDir": "dist/primer-parcial",
+  "server": {
+    "androidScheme": "https"
+  }
+}
